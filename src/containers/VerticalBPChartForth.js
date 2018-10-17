@@ -1,0 +1,27 @@
+import React from 'react';
+import { Row, Col, Card } from 'antd';
+import D3VerticalBPChartForth from '../components/charts/D3VerticalBPChartForth';
+
+class VerticalBPChartForth extends React.Component {
+    render() {
+
+        const data = [['ionic-team/ionic', 'ionic-team/ionic', 211], ['NativeScript/NativeScript', 'ionic-team/ionic', 24], ['canjs/dom-patch', 'ionic-team/ionic', 23], ['mapbox/node-pre-gyp', 'ionic-team/ionic', 5], ['pre-commit/pre-commit-hooks', 'ionic-team/ionic', 2], ['golang/dep', 'golang/dep', 300], ['go-gitea/gitea', 'golang/dep', 22], ['conda/conda', 'conda/conda', 250], ['python/typeshed', 'conda/conda', 26], ['inspirehep/inspire-next', 'conda/conda', 3], ['scitran/core', 'conda/conda', 3], ['desihub/surveysim', 'conda/conda', 2], ['RobotLocomotion/drake', 'GoogleCloudPlatform/google-cloud-node', 99], ['nemerosa/ontrack', 'GoogleCloudPlatform/google-cloud-node', 2], ['rstudio/keras', 'GoogleCloudPlatform/google-cloud-node', 2], ['atom/atom', 'Microsoft/vscode', 28], ['go-gitea/gitea', 'Microsoft/vscode', 22], ['IronLanguages/main', 'Microsoft/vscode', 4], ['Valloric/YouCompleteMe', 'Microsoft/vscode', 3], ['WhisperSystems/Signal-Desktop', 'Microsoft/vscode', 2], ['lbryio/lbry-app', 'Microsoft/vscode', 2], ['Homebrew/homebrew-core', 'Homebrew/homebrew-core', 109], ['mapbox/mapbox-gl-style-spec', 'Homebrew/homebrew-core', 23], ['fastlane/fastlane', 'Homebrew/homebrew-core', 3], ['wet-boew/wet-boew', 'w3c/web-animations', 98], ['vmware/vic', 'w3c/web-animations', 45], ['mozilla/addons-server', 'mozilla/addons-server', 10], ['gorhill/uBlock', 'mozilla/addons-server', 2], ['ros/rosdistro', 'ros2/demos', 53], ['SpongePowered/SpongeForge', 'CyclopsMC/IntegratedDynamics', 31], ['odoo/odoo', 'OCA/server-tools', 15], ['vector-im/riot-web', 'vector-im/riot-web', 11], ['samvera-labs/hyku', 'samvera/hyrax', 11], ['zcash/zcash', 'zcash/zcash', 11], ['kiegroup/kie-wb-common', 'kiegroup/jbpm-designer', 7], ['exercism/problem-specifications', 'exercism/python', 7], ['OPM/opm-simulators', 'OPM/opm-simulators', 6], ['andig/homebridge-fritz', 'nfarina/homebridge', 6], ['LLK/scratch-gui', 'LLK/scratch-gui', 5], ['openhab/openhab2-addons', 'eclipse/smarthome', 5], ['TerriaJS/nationalmap', 'TerriaJS/nationalmap', 5], ['kiwix/kiwix-xulrunner', 'kiwix/kiwix-xulrunner', 5], ['openvstorage/framework', 'openvstorage/framework', 4], ['opendatakit/collect', 'opendatakit/collect', 4], ['realm/realm-object-store', 'oknosoft/windowbuilder', 4], ['hasgeek/lastuser', 'hasgeek/baseframe', 4], ['getgauge/gauge', 'getgauge/gauge', 3], ['vega/vega', 'vega/vega', 3], ['spring-cloud/spring-cloud-dataflow', 'spring-cloud/spring-cloud-dataflow', 3], ['zopefoundation/Zope', 'zopefoundation/Zope', 3], ['simpeg/simpeg', 'simpeg/simpeg', 3], ['webdriverio/webdriverio', 'webdriverio/webdriverio', 3], ['googlecartographer/cartographer_ros', 'googlecartographer/cartographer_ros', 3], ['cucumber/cucumber-ruby-core', 'cucumber/cucumber-ruby', 3], ['geneontology/noctua', 'geneontology/noctua', 3], ['qbittorrent/qBittorrent', 'SchizoDuckie/DuckieTV', 3], ['clarat-org/clarat_base', 'clarat-org/clarat', 3], ['kartoza/geonode_qgis_server', 'kartoza/geosafe', 3], ['grote/Transportr', 'grote/Transportr', 2], ['zaproxy/zaproxy', 'zaproxy/zaproxy', 2], ['stefan-niedermann/nextcloud-notes', 'stefan-niedermann/nextcloud-notes', 2], ['frappe/erpnext', 'frappe/erpnext', 2], ['gslab-econ/template', 'gslab-econ/template', 2], ['inaturalist/inaturalist', 'inaturalist/inaturalist', 2], ['OHDSI/Atlas', 'OHDSI/WebAPI', 2], ['Beit-Hatfutsot/dbs-front', 'Beit-Hatfutsot/dbs-back', 2], ['informatics-isi-edu/ermrestjs', 'informatics-isi-edu/ermrestjs', 2], ['zotero/zotero-connectors', 'zotero/zotero', 2], ['PhoenicisOrg/POL-POM-5', 'PhoenicisOrg/POL-POM-5', 2], ['PalouseRobosub/robosub_simulator', 'PalouseRobosub/robosub_simulator', 2], ['uclouvain/osis', 'uclouvain/osis-portal', 2], ['Zarel/Pokemon-Showdown-Client', 'Zarel/Pokemon-Showdown', 2], ['volumio/Volumio2-UI', 'volumio/Volumio2', 2], ['Tendrl/common', 'Tendrl/monitoring-integration', 2], ['asamuzaK/withExEditor', 'asamuzaK/withExEditor', 2], ['DaemonEngine/Daemon', 'Unvanquished/Unvanquished', 2], ['gchq/gaffer-tools', 'gchq/gaffer-tools', 2], ['liqd/adhocracy4', 'liqd/a4-meinberlin', 2], ['bhdresh/CVE-2017-0199', 'rapid7/metasploit-framework', 2], ['wso2/product-iots', 'wso2/product-iots', 2], ['boostorg/config', 'boostorg/thread', 2], ['wet-boew/wet-boew', 'ManageIQ/manageiq-ui-classic', 49.0], ['wet-boew/wet-boew', 'w3c/web-animations', 49.0], ['go-gitea/gitea', 'golang/dep', 11.0], ['go-gitea/gitea', 'Microsoft/vscode', 11.0]];
+
+ 
+        return (
+            <div className="gutter-example virtical-bp-chart-forth-demo">
+                <Row gutter={10}>
+                    <Col className="gutter-row" md={24}>
+                        <div className="gutter-box">
+                            <Card title="2015下到2016上" bordered={false}>
+                                <D3VerticalBPChartForth data={data} />
+                            </Card>
+                        </div>
+                    </Col>
+                </Row>             
+            </div>
+        )
+    }
+}
+
+export default VerticalBPChartForth;
